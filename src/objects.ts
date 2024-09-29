@@ -32,7 +32,7 @@ export function makeBlankQuestion(
 export function isCorrect(question: Question, answer: string): boolean {
     const question1 = { ...question };
     if (
-        answer.trim().toLowerCase() == question1.expected.trim().toLowerCase()
+        answer.trim().toLowerCase() === question1.expected.trim().toLowerCase()
     ) {
         return true;
     } else {
@@ -47,7 +47,12 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    const question2 = { ...question };
+    if (question2.type === "multiple_choice_question") {
+        return question2.options.includes(answer);
+    } else {
+        return answer.length > 0;
+    }
 }
 
 /**
