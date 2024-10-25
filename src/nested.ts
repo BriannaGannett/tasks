@@ -1,3 +1,4 @@
+import { BlobOptions } from "buffer";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -88,7 +89,13 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * Hint: as usual, do not modify the input questions array
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    const newQuestions = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            published: true,
+        }),
+    );
+    return newQuestions;
 }
 
 /***
