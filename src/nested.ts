@@ -1,4 +1,4 @@
-import { BlobOptions } from "buffer";
+//import { BlobOptions } from "buffer";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { makeBlankQuestion } from "./objects";
@@ -154,5 +154,20 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    const newQuestions = questions.map((question: Question): Question => {
+        const newQuestion = { ...question };
+        if (question.id === targetId) {
+            const newOptions = [...question.options];
+            if (targetOptionIndex === -1) {
+                newOptions.push(newOption);
+            } else {
+                newOptions[targetOptionIndex] = newOption;
+            }
+            newQuestion.options = newOptions;
+        } else {
+            newQuestion.options = [...question.options];
+        }
+        return newQuestion;
+    });
+    return newQuestions;
 }
