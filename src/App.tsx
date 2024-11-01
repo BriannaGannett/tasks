@@ -7,6 +7,7 @@ import { Counter } from "./components/Counter";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 function App(): React.JSX.Element {
     return (
@@ -59,6 +60,14 @@ function App(): React.JSX.Element {
             <TwoDice></TwoDice>
             <hr />
             <ChangeType></ChangeType>
+            <Button
+                onClick={() => {
+                    console.log("Hello World!");
+                }}
+            >
+                {" "}
+                Log Hello World!
+            </Button>
         </div>
     );
 }
