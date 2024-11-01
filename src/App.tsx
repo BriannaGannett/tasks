@@ -1,6 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Button } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { TwoDice } from "./components/TwoDice";
+import { Counter } from "./components/Counter";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -11,12 +14,9 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 UM COS420 with React Hooks and TypeScript
             </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload. Brianna Gannett. Hello World
-            </p>
+            <p>Brianna Gannett. Hello World</p>
             <div style={{ background: "blue" }}>
-                <h1>This is a header.</h1>
+                <h1>This is a header</h1>
             </div>
             <img src="src\pic.jpg" alt="A picture of old architecture" />
             <ul>
@@ -24,14 +24,6 @@ function App(): React.JSX.Element {
                 <li> Second Item</li>
                 <li> Third Item</li>
             </ul>
-            <Button
-                onClick={() => {
-                    console.log("Hello World!");
-                }}
-            >
-                {" "}
-                Log Hello World!
-            </Button>
             <div>
                 <Container>
                     <Row>
@@ -58,7 +50,15 @@ function App(): React.JSX.Element {
                     </Row>
                 </Container>
             </div>
-            ;
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <div></div>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
         </div>
     );
 }
