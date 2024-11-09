@@ -19,15 +19,13 @@ function App(): React.JSX.Element {
                 UM COS420 with React Hooks and TypeScript
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            {<DoubleHalf></DoubleHalf>}
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
             <ColoredBox></ColoredBox>
             <p>Brianna Gannett. Hello World</p>
-            <div style={{ background: "blue" }}>
-                <h1>This is a header</h1>
-            </div>
+            <div style={{ background: "blue" }}></div>
             <img src="src\pic.jpg" alt="A picture of old architecture" />
             <ul>
                 <li> First Item</li>
